@@ -1,0 +1,46 @@
+{
+  "name": "rainspot",
+  "version": "1.0.0",
+  "description": "A library for creating rain spot visualizations with SVG or Canvas",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "exports": {
+    "./svg": "./src/rainSPOT.svg.js",
+    "./canvas": "./src/rainSPOT.canvas.js",
+    "./svg.min": "./dist/rainSPOT.svg.min.js",
+    "./canvas.min": "./dist/rainSPOT.canvas.min.js"
+  },
+  "scripts": {
+    "build:svg": "terser src/rainSPOT.svg.js -c passes=2 -m -o dist/rainSPOT.svg.min.js --source-map",
+    "build:canvas": "terser src/rainSPOT.canvas.js -c passes=2 -m -o dist/rainSPOT.canvas.min.js --source-map",
+    "build": "npm run build:svg && npm run build:canvas",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "precipitation",
+    "rain",
+    "showers",
+    "radar",
+    "visualization",
+    "svg",
+    "canvas",
+    "javascript",
+    "meteoblue"
+  ],
+  "author": "Boris Anthony",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/borisanthony/rainspot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/borisanthony/rainspot/issues"
+  },
+  "homepage": "https://github.com/borisanthony/rainspot#readme",
+  "devDependencies": {
+    "terser": "^5.32.0"
+  }
+}
