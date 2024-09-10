@@ -15,7 +15,8 @@
   "scripts": {
     "build:svg": "terser src/rainSPOT.svg.js -c passes=2 -m -o dist/rainSPOT.svg.min.js --source-map",
     "build:canvas": "terser src/rainSPOT.canvas.js -c passes=2 -m -o dist/rainSPOT.canvas.min.js --source-map",
-    "build": "npm run build:svg && npm run build:canvas",
+    "copy:site": "mkdir -p _site && cp dist/rainSPOT.svg.min.js dist/rainSPOT.canvas.min.js _site/",
+    "build": "npm run build:svg && npm run build:canvas && npm run copy:site",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
