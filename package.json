@@ -1,7 +1,7 @@
 {
   "name": "rainspot",
   "version": "1.0.0",
-  "description": "A library for creating rain spot visualizations with SVG or Canvas",
+  "description": "A Javascript library for generating meteoblue 'rainSPOT' visualizations with SVG or Canvas",
   "files": [
     "src",
     "dist"

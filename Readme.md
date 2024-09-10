@@ -1,6 +1,6 @@
 # rainSPOT
 
-A library for creating meteoblue "rainSPOT" visualizations with SVG or Canvas
+A Javascript library for generating meteoblue "rainSPOT" visualizations with SVG or Canvas
 
 A "rainSPOT" is a neat visualization of localized precipitation data developped by meteoblue.com.
 
