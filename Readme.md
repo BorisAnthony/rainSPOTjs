@@ -26,9 +26,10 @@ It's mostly the same, just adds flexibility and tidiness.
 
 ## Installation
 
-```sh
-npm install rainSPOTjs
-```
+*(Coming soon: NPM…)*
+
+For now, simply clone or [download](https://github.com/BorisAnthony/rainSPOTjs/archive/refs/heads/main.zip) this repo,
+or grab the archive over in [Releases](https://github.com/BorisAnthony/rainSPOTjs/releases).
 
 ## Usage
 
