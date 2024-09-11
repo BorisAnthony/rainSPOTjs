@@ -9,36 +9,36 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-function create_rainSPOT_SVG({inputString, options = {}}) {
+export function create_rainSPOT_SVG({inputString, options = {}}) {
   // Validate input
   if (inputString.length !== 49 || !/^\d+$/.test(inputString)) {
     throw new Error('Invalid input string. Must be 49 digits.');
   }
 
   // Destructure options with default values
-  const {
+  let {
     canvasSize = 140,
     useCSS = false,
     colorPalette = {
-      0: '#ffffff66', // transparent
+      0: '#fff6', // transparent
       1: '#13eefc', // light blue 0.2mm - 1.5mm
       2: '#3aaadc', // blue 1.5mm - 5mm
       3: '#1774c4', // dark blue > 5mm
       9: '#22d690' // green 0.02mm - 02.mm
     },
     rangeRings = {
-      enabled: false,
+      enabled: true,
       colors: {
         1: '#000',
         3: '#000',
         5: '#000',
-        7: '#000'
+        7: '#0000'
       },
-      strokeWidth: 5
+      strokeWidth: 2
     },
     crossHairs = {
-      enabled: false,
-      style: 'bullseye',
+      enabled: true,
+      style: 'brackets',
       color: '#000',
       strokeWidth: 2
     }
