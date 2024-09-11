@@ -1,6 +1,6 @@
 {
   "name": "rainspotjs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A Javascript library for generating meteoblue 'rainSPOT' visualizations with SVG or Canvas",
   "files": [
     "src",

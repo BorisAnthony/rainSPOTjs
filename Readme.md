@@ -10,7 +10,7 @@ See: https://content.meteoblue.com/en/private-customers/website-help/7-day-weath
 
 ---
 
-## Have a [play with the DEMO](https://borisanthony.github.io/rainSPOTjs/) or check out the [basic example](https://borisanthony.github.io/rainSPOTjs/basic.html).
+## Have a [play with the DEMO](https://borisanthony.github.io/rainSPOTjs/) <br >or check out the [basic example](https://borisanthony.github.io/rainSPOTjs/basic.html).
 
 ---
 
@@ -26,10 +26,27 @@ It's mostly the same, just adds flexibility and tidiness.
 
 ## Installation
 
-*(Coming soon: NPM…)*
+### NPM
 
-For now, simply clone or [download](https://github.com/BorisAnthony/rainSPOTjs/archive/refs/heads/main.zip) this repo,
+`npm i rainspotjs`
+
+then include either directly
+
+```javascript
+<script type='module'>
+import { create_rainSPOT_SVG } from './node_modules/rainspotjs/dist/rainSPOT.svg.min.js';
+import { create_rainSPOT_Canvas } from './node_modules/rainspotjs/dist/rainSPOT.canvas.min.js';
+</script>
+```
+or however you normally do it with all those fancy tools you have. 🔧🔨🪛
+
+
+### Old Fashioned 🥃
+
+Simply clone or [download](https://github.com/BorisAnthony/rainSPOTjs/archive/refs/heads/main.zip) this repo,
 or grab the archive over in [Releases](https://github.com/BorisAnthony/rainSPOTjs/releases).
+
+---
 
 ## Usage
 
@@ -54,6 +71,7 @@ import { create_rainSPOT_Canvas } from './rainSPOT.canvas.min.js';
 
 rainSPOTjs has some built-in default styling which reflect the original style from meteoblue. These can be customized a little bit (maybe too much) via an options object (*a.k.a. associative array, hash, etc…*).
 
+---
 
 ## License
 MIT
