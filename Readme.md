@@ -10,9 +10,9 @@ See: https://content.meteoblue.com/en/private-customers/website-help/7-day-weath
 
 ---
 
-# PLEASE HOLD WHILE I FIGURE OUT HOW TO PUBLISH THIS PROPERLY 😅
+# Please hold while i figure out how to publish this properly 😅
 
-# DOCUMENTATION WILL FOLLOW
+# Documentation will follow soon
 
 ## For now, have a [play with the DEMO](https://borisanthony.github.io/rainSPOTjs/)
 
