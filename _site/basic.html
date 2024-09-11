@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RainSpot with Dynamic Controls</title>
+  <style>
+    body {
+      color: #333;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+      font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    }
+    .example {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px dotted #000;
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      min-width: 80%;
+    }
+    code {
+      /* white-space: pre;
+      font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+      font-weight: 400;
+      font-size: 1.2rem;
+      background: rgba(255 255 255 / 0.66);
+      padding:  0 1rem; */
+      min-height: 140px;
+      border-radius: 5px;
+    }
+    svg, img {
+      display: block;
+      height: auto;
+      box-sizing: border-box;
+    }
+
+  </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+</head>
+<body>
+<h1>rainSPOT Usage Examples</h1>
+
+<h2>Basic, default style</h2>
+
+<h3>SVG</h3>
+<div class="example">
+  <div id="container_svg_1" class="rainspot-container"></div>
+  <pre><code>
+const container_svg_1 = document.getElementById('container_svg_1');
+const rainSpot_svg_1_Data = '3222333223222322222222222222222232222223339222232'
+let rainSPOT_svg_1 = create_rainSPOT_SVG({inputString: rainSpot_svg_1_Data});
+container_svg_1.appendChild(rainSPOT_svg_1);
+  </code></pre>
+</div>
+
+<h3>Canvas PNG</h3>
+<div class="example">
+  <div id="container_canvas_1" class="rainspot-container"></div>
+  <pre><code>
+const container_canvas_1 = document.getElementById('container_canvas_1');
+const rainSpot_canvas_1_Data = '3222333223222322222222222222222232222223339222232'
+let rainSPOT_canvas_1 = create_rainSPOT_Canvas({inputString: rainSpot_canvas_1_Data});
+container_canvas_1.appendChild(rainSPOT_canvas_1);
+  </code></pre>
+</div>
+
+<h2>Customizing style</h2>
+using the options "object"
+<h3>SVG</h3>
+<div class="example">
+  <div id="container_svg_2" class="rainspot-container"></div>
+  <pre><code>
+const options_svg_2 = {
+  canvasSize: 140,
+  useCSS: false,
+  colorPalette: {
+    0: 'rgba(255 255 255 / 1)',
+    1: '#999999',
+    2: '#666666',
+    3: '#333333',
+    9: '#cccccc'
+  },
+  rangeRings: {
+    enabled: true,
+    colors: {
+      1: 'rgba(0 0 0 / 0)',
+      3: 'rgba(0 0 0 / 1)',
+      5: 'rgba(0 0 0 / 1)',
+      7: 'rgba(0 0 0 / 0)'
+    },
+    strokeWidth: 3
+  },
+  crossHairs: {
+    enabled: false,
+    style: 'brackets',
+    color: 'rgba(0 0 0 / 1)',
+    strokeWidth: 3
+  }
+};
+const container_svg_2 = document.getElementById('container_svg_2');
+const rainSpot_svg_2_Data = '9111111991122211122221111122111111199000110010111'
+let rainSPOT_svg_2 = create_rainSPOT_SVG({inputString: rainSpot_svg_2_Data, options: options_svg_2});
+container_svg_2.appendChild(rainSPOT_svg_2);
+  </code></pre>
+</div>
+
+<h3>Canvas PNG</h3>
+<div class="example">
+  <div id="container_canvas_2" class="rainspot-container"></div>
+  <pre><code>
+const options_canvas_2 = {
+  canvasSize: 140,
+  useCSS: false,
+  colorPalette: {
+    0: 'rgba(255 255 255 / 0.5)', // transparent
+    1: '#13eefc', // light blue 0.2mm - 1.5mm
+    2: '#3aaadc', // blue 1.5mm - 5mm
+    3: '#1774c4', // dark blue > 5mm
+    9: '#22d690' // green 0.02mm - 02.mm
+  },
+  rangeRings: {
+    enabled: true,
+    colors: {
+      1: 'rgba(255 0 0 / 1)',
+      3: 'rgba(0 255 0 / 1)',
+      5: 'rgba(0 0 255 / 1)',
+      7: 'rgba(0 255 255 / 1)'
+    },
+    strokeWidth: 2
+  },
+  crossHairs: {
+    enabled: true,
+    style: 'bullseye',
+    color: 'rgba(255 255 255 / 0.9)',
+    strokeWidth: 3
+  }
+};
+const container_canvas_2 = document.getElementById('container_canvas_2');
+const rainSpot_canvas_2_Data = '3333333323332233333322233322222333112233231222332'
+let rainSPOT_canvas_2 = create_rainSPOT_Canvas({inputString: rainSpot_canvas_2_Data, options: options_canvas_2});
+container_canvas_2.appendChild(rainSPOT_canvas_2);
+  </code></pre>
+</div>
+
+
+<script type="module">
+import { create_rainSPOT_SVG } from './rainSPOT.svg.min.js';
+import { create_rainSPOT_Canvas } from './rainSPOT.canvas.min.js';
+
+// Example 1
+// - SVG
+const container_svg_1 = document.getElementById('container_svg_1');
+const rainSpot_svg_1_Data = '3222333223222322222222222222222232222223339222232'
+let rainSPOT_svg_1 = create_rainSPOT_SVG({inputString: rainSpot_svg_1_Data});
+container_svg_1.appendChild(rainSPOT_svg_1);
+
+// - Canvas
+const container_canvas_1 = document.getElementById('container_canvas_1');
+const rainSpot_canvas_1_Data = '3222333223222322222222222222222232222223339222232'
+let rainSPOT_canvas_1 = create_rainSPOT_Canvas({inputString: rainSpot_canvas_1_Data});
+container_canvas_1.appendChild(rainSPOT_canvas_1);
+
+
+// Example 2
+
+
+
+// - SVG
+const options_svg_2 = {
+  canvasSize: 140,
+  useCSS: false,
+  colorPalette: {
+    0: 'rgba(255 255 255 / 1)',
+    1: '#999999',
+    2: '#666666',
+    3: '#333333',
+    9: '#cccccc'
+  },
+  rangeRings: {
+    enabled: true,
+    colors: {
+      1: 'rgba(0 0 0 / 0)',
+      3: 'rgba(0 0 0 / 1)',
+      5: 'rgba(0 0 0 / 1)',
+      7: 'rgba(0 0 0 / 0)'
+    },
+    strokeWidth: 3
+  },
+  crossHairs: {
+    enabled: false,
+    style: 'brackets',
+    color: 'rgba(0 0 0 / 1)',
+    strokeWidth: 3
+  }
+};
+const container_svg_2 = document.getElementById('container_svg_2');
+const rainSpot_svg_2_Data = '9111111991122211122221111122111111199000110010111'
+let rainSPOT_svg_2 = create_rainSPOT_SVG({inputString: rainSpot_svg_2_Data, options: options_svg_2});
+container_svg_2.appendChild(rainSPOT_svg_2);
+
+// - Canvas
+const options_canvas_2 = {
+  canvasSize: 140,
+  useCSS: false,
+  colorPalette: {
+    0: 'rgba(255 255 255 / 0.5)', // transparent
+    1: '#13eefc', // light blue 0.2mm - 1.5mm
+    2: '#3aaadc', // blue 1.5mm - 5mm
+    3: '#1774c4', // dark blue > 5mm
+    9: '#22d690' // green 0.02mm - 02.mm
+  },
+  rangeRings: {
+    enabled: true,
+    colors: {
+      1: 'rgba(255 0 0 / 1)',
+      3: 'rgba(0 255 0 / 1)',
+      5: 'rgba(0 0 255 / 1)',
+      7: 'rgba(0 255 255 / 1)'
+    },
+    strokeWidth: 2
+  },
+  crossHairs: {
+    enabled: true,
+    style: 'bullseye',
+    color: 'rgba(255 255 255 / 0.9)',
+    strokeWidth: 3
+  }
+};
+const container_canvas_2 = document.getElementById('container_canvas_2');
+const rainSpot_canvas_2_Data = '3333333323332233333322233322222333112233231222332'
+let rainSPOT_canvas_2 = create_rainSPOT_Canvas({inputString: rainSpot_canvas_2_Data, options: options_canvas_2});
+container_canvas_2.appendChild(rainSPOT_canvas_2);
+
+
+
+
+
+// // Define some rainSPOTs
+// const rainSPOTs = [
+//   "0000000000000011990009990000990000099000000000000",
+//   "2222232332222222222222222223222222222222222233222",
+//   "3233333333233322233332223333222233322223332222333",
+//   "9111111991122211122221111122111111199000110010111",
+//   "3333333333133333331333333333333333333333333333333",
+//   "3333333323332233333322233322222333112233231222332",
+//   "3222333223222322222222222222222232222223339222232",
+//   "0000101000100000000000000000000000000000010000000"
+// ];
+
+// // Set initial options
+// let options = {
+//   canvasSize: 140,
+//   useCSS: false,
+//   colorPalette: {
+//     0: 'rgba(255, 255, 255, 0.5)', // transparent
+//     1: '#13eefc', // light blue 0.2mm - 1.5mm
+//     2: '#3aaadc', // blue 1.5mm - 5mm
+//     3: '#1774c4', // dark blue > 5mm
+//     9: '#22d690' // green 0.02mm - 02.mm
+//   },
+//   rangeRings: {
+//     enabled: true,
+//     colors: {
+//       1: 'rgba(0, 0, 0, 1)',
+//       3: 'rgba(0, 0, 0, 1)',
+//       5: 'rgba(0, 0, 0, 1)',
+//       7: 'rgba(0, 0, 0, 1)'
+//     },
+//     strokeWidth: 1
+//   },
+//   crossHairs: {
+//     enabled: true,
+//     style: 'brackets',
+//     color: 'rgba(0, 0, 0, 1)',
+//     strokeWidth: 1
+//   }
+// };
+
+
+
+</script>
+</body>
+</html>
