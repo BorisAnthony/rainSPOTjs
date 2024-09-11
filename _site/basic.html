@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RainSpot with Dynamic Controls</title>
-  <style>
-    body {
-      color: #333;
-      background: #f1f1f1;
-      margin: 0;
-      padding: 20px;
-      font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-    }
-    .example {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: left;
-      align-items: start;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px dotted #000;
-    }
-    pre {
-      margin: 0;
-      padding: 0;
-      min-width: 80%;
-    }
-    code {
-      /* white-space: pre;
-      font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-      font-weight: 400;
-      font-size: 1.2rem;
-      background: rgba(255 255 255 / 0.66);
-      padding:  0 1rem; */
-      min-height: 140px;
-      border-radius: 5px;
-    }
-    svg, img {
-      display: block;
-      height: auto;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RainSpot with Dynamic Controls</title>
+<style>
+  body {
+    color: #333;
+    background: #f1f1f1;
+    margin: 0;
+    padding: 20px;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  }
+  .example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dotted #000;
+  }
+  pre {
+    margin: 0;
+    padding: 0;
+    min-width: 80%;
+  }
+  code {
+    /* white-space: pre;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    font-weight: 400;
+    font-size: 1.2rem;
+    background: rgba(255 255 255 / 0.66);
+    padding:  0 1rem; */
+    min-height: 140px;
+    border-radius: 5px;
+  }
+  svg, img {
+    display: block;
+    height: auto;
+    box-sizing: border-box;
+  }
 
-  </style>
-
+</style>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Load highlight.js -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-<!-- and it's easy to individually load additional languages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
-
 <script>hljs.highlightAll();</script>
-
 </head>
 <body>
 <h1>rainSPOT Usage Examples</h1>
