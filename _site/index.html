@@ -173,7 +173,15 @@ input[type="range"] {
     "3333333333133333331333333333333333333333333333333",
     "3333333323332233333322233322222333112233231222332",
     "3222333223222322222222222222222232222223339222232",
-    "0000101000100000000000000000000000000000010000000"
+    "0000101000100000000000000000000000000000010000000",
+    "3333333333333333333333333333333333333333333333333",
+    "2222222222232222222222222322212222221121212222222",
+    "3333332333333223333322332222233322223322222222222",
+    "9911110900919000909909090090000000000090000000099",
+    "0000000000000000000000000000000001000000000000000",
+    "3332223333222232111122212223221233321093332119233",
+    "2333333333333322222320101222000133300023330011233",
+    "1200100211111922100112220112322112232230223233322"
   ];
 
   // Set initial options
@@ -214,6 +222,25 @@ input[type="range"] {
     } : null;
   }
 
+  function getRandomRainSPOTs(rainSPOTs, numItems=1) {
+    if (numItems > rainSPOTs.length) {
+      numItems = 1;
+    }
+
+    const selectedSPOTs = [];
+    const usedIndices = new Set();
+
+    while (selectedSPOTs.length < numItems) {
+      const randomIndex = Math.floor(Math.random() * rainSPOTs.length);
+      if (!usedIndices.has(randomIndex)) {
+        selectedSPOTs.push(rainSPOTs[randomIndex]);
+        usedIndices.add(randomIndex);
+      }
+    }
+
+    return selectedSPOTs;
+  }
+
   function updateOptions() {
     // Update canvas size
     options.canvasSize = parseInt(document.getElementById('canvas-size').value);
@@ -251,8 +278,13 @@ input[type="range"] {
   containerSvg.innerHTML = '';
   containerCvs.innerHTML = '';
 
+
+
+
+
   // Redraw all rainSPOTs
-  rainSPOTs.forEach(rainSPOT => {
+  // rainSPOTs.forEach(rainSPOT => {
+  getRandomRainSPOTs(rainSPOTs, 4).forEach(rainSPOT => {
     let svgWrapper = document.createElement('div');
     svgWrapper.className = 'rainspot-item';
     let rainSPOTsvg = create_rainSPOT_SVG({inputString: rainSPOT, options: options});
